@@ -4,7 +4,8 @@
   "description": "implementacao para estudo curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker compose -f infra/compose.yaml up -d",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
